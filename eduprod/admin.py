@@ -1,3 +1,6 @@
+from django import forms
 from django.contrib import admin
+from .models import Question
 
-# Register your models here.
+# Register Question model with the default ModelAdmin
+admin.site.register(Question)
