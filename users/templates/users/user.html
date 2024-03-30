@@ -1,6 +1,8 @@
 {% extends "users/layout.html" %}
 {% block body %}
-    <h1>Welcome, {{ request.user.first_name }}</h1>
-    <p>Username: {{ request.user.username }}</p>
-    <a href="{% url 'eduprod:index' %}">Take the Quiz</a>
-{% endblock %}
+<div class="app">
+    <h1>Welcome, {{ request.user.first_name }}!</h1>
+    <h2>The following quiz is revision of Module 1. Click start to begin.</h2>
+    <a href="{% url 'eduprod:index' %}">Start</a>
+</div>    
+{% endblock %}   

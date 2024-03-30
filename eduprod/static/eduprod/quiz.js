@@ -1,31 +1,38 @@
-document.addEventListener("DOMContentLoaded", function() {
-    let currentQuestionIndex = 0;
-    const questions = JSON.parse(document.getElementById('content').getAttribute('data-questions'));
-    const content = document.getElementById('content');
-    const btn = document.getElementById('revealBtn');
-
-    function displayQuestion() {
-        if (currentQuestionIndex < questions.length) {
-            const question = questions[currentQuestionIndex].fields.question_text;
-            const answer = questions[currentQuestionIndex].fields.answer_text;
-            content.innerHTML = `<div class='question'>Question: ${question}</div><div class='answer' style='display: none;'>Answer: ${answer}</div>`;
-            btn.textContent = "Reveal Answer";
-        } else {
-            content.innerHTML = "No more questions.";
-            btn.style.display = "none";
-        }
+const questions = [
+    {
+        question: "Which of the following is an example of a chemical change?",
+        answers: [
+            { text: "Melting Ice", correct: false},
+            { text: "Dissolving Sugar in Water", correct: false},
+            { text: "Burning Wood", correct: true},
+            { text: "Cutting Paper", correct: false},
+        ]
+    },
+    {
+        question: "Which of the following is an example of a chemical change?",
+        answers: [
+            { text: "Melting Ice", correct: false},
+            { text: "Dissolving Sugar in Water", correct: false},
+            { text: "Burning Wood", correct: true},
+            { text: "Cutting Paper", correct: false},
+        ]
     }
+    
+]
+const questionElement = document.getElementById('question');
+const answerButton = document.getElementById('answer-buttons');
+const nextButton = document.getElementById('next-btn');
 
-    displayQuestion();
-
-    btn.addEventListener("click", function() {
-        const answerElement = content.querySelector('.answer');
-        if (btn.textContent === "Reveal Answer") {
-            answerElement.style.display = "block";
-            btn.textContent = "Next Question";
-        } else {
-            currentQuestionIndex++;
-            displayQuestion();
-        }
-    });
-});
+let currentQuestionIndex = 0;
+let score = 0;
+function StartQuiz(){
+    currentQuestionIndex= 0;
+    score = 0;
+    nextButton.innerHTML = "Next";
+    showQuestion();
+}
+function showQuestion(){
+    let currentQuestion = questions[currentQuestionIndex];
+    let questionNo = currentQuestionIndex + 1;
+    questionElement.innerHTML = questionNo +
+}
