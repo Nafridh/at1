@@ -35,7 +35,6 @@ const questions = [
             { text: "Cutting Paper", correct: false},
         ]
     }
-    
 ];
 
 const questionElement = document.getElementById('question');
@@ -45,10 +44,10 @@ const nextButton = document.getElementById('next-btn');
 let currentQuestionIndex = 0;
 let score = 0;
 
-function StartQuiz(){
-    currentQuestionIndex= 0;
+function startQuiz(){
+    currentQuestionIndex = 0;
     score = 0;
-    nextButton.innerHTML = "Next";
+    nextButton.style.display = "none"; // Hide the 'Next' button initially
     showQuestion();
 }
 
@@ -56,34 +55,48 @@ function showQuestion(){
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
     let questionNo = currentQuestionIndex + 1;
-    questionElement.innerHTML = questionNo + ". " + currentQuestion.
-    question;
+    questionElement.innerHTML = questionNo + ". " + currentQuestion.question;
 
-    currentQuestion.answers.forEach(answers => {
+    currentQuestion.answers.forEach(answer => {
         const button = document.createElement("button");
         button.innerHTML = answer.text;
         button.classList.add("btn");
         answerButtons.appendChild(button);
         button.addEventListener("click", selectAnswer);
-      
     });
 }
 
 function resetState(){
-    nextButton.style.display = "none";
     while(answerButtons.firstChild){
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
 
 function selectAnswer(e){
-    const selectedBtn = e.targer;
-    const isCorrect = selectedBtn.dataset.correvt === "true";   
+    const selectedBtn = e.target;
+    const isCorrect = selectedBtn.dataset.correct === "true";   
     if(isCorrect){
         selectedBtn.classList.add("correct");
+        score++; // Increment score for correct answer
     }else{
         selectedBtn.classList.add("incorrect");
     }
-}  
+    // Display the "Next" button
+    nextButton.style.display = "block";
+    // Add event listener for the "Next" button to progress to the next question
+    nextButton.addEventListener('click', () => {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < questions.length) {
+            showQuestion();
+            nextButton.style.display = "none"; // Hide the 'Next' button after displaying the next question
+        } else {
+            // If all questions have been answered, display the score or any other end-of-quiz logic
+            alert("Quiz completed! Your score: " + score);
+            // Optionally, reset the quiz after completion
+            // startQuiz();
+        }
+    });
+}
 
+// Call startQuiz function when the page loads to begin the quiz
 startQuiz();
