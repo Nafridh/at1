@@ -16,21 +16,42 @@ const questions = [
             { text: "Burning Wood", correct: true},
             { text: "Cutting Paper", correct: false},
         ]
+    },
+    {
+        question: "Which of the following is an example of a chemical change?",
+        answers: [
+            { text: "Melting Ice", correct: false},
+            { text: "Dissolving Sugar in Water", correct: false},
+            { text: "Burning Wood", correct: true},
+            { text: "Cutting Paper", correct: false},
+        ]
+    },
+    {
+        question: "Which of the following is an example of a chemical change?",
+        answers: [
+            { text: "Melting Ice", correct: false},
+            { text: "Dissolving Sugar in Water", correct: false},
+            { text: "Burning Wood", correct: true},
+            { text: "Cutting Paper", correct: false},
+        ]
     }
     
-]
+];
+
 const questionElement = document.getElementById('question');
 const answerButtons = document.getElementById('answer-buttons');
 const nextButton = document.getElementById('next-btn');
 
 let currentQuestionIndex = 0;
 let score = 0;
+
 function StartQuiz(){
     currentQuestionIndex= 0;
     score = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
 }
+
 function showQuestion(){
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
@@ -43,6 +64,8 @@ function showQuestion(){
         button.innerHTML = answer.text;
         button.classList.add("btn");
         answerButtons.appendChild(button);
+        button.addEventListener("click", selectAnswer);
+      
     });
 }
 
@@ -52,4 +75,15 @@ function resetState(){
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
+
+function selectAnswer(e){
+    const selectedBtn = e.targer;
+    const isCorrect = selectedBtn.dataset.correvt === "true";   
+    if(isCorrect){
+        selectedBtn.classList.add("correct");
+    }else{
+        selectedBtn.classList.add("incorrect");
+    }
+}  
+
 startQuiz();

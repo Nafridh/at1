@@ -1,33 +1,30 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Chemistry - Revision Quiz</title>
-    <link href="{% static 'eduprod/styles.css' %}" rel="stylesheet">
-    <script src="{% static 'eduprod/quiz.js' %}" defer></script>
+   <link href="{% static 'eduprod/styles.css' %}" rel="stylesheet">
+   <script src="{% static 'eduprod/scripts.js' %}" defer></script>
 </head>
 <body>
-    <div class="header">
-        <div class="user-info">
-            <form action="{% url 'users:logout' %}" method="post" style="margin: 0; margin-left: 20px;">
-                {% csrf_token %}
-                <button type="submit">Log out</button>
-            </form>
-        </div>
-        <div class="app">
-            <h1>Simple Quiz</h1>
-            <div class="quiz"
-            <h2 id="question">Question goes here</h2>
-            <div id="answer-buttons">
-                <button class="btn">Answer 1</button>
-                <button class="btn">Answer 2</button>
-                <button class="btn">Answer 3</button>
-                <button class="btn">Answer 4</button>
-            </div>
-            <button id="next-btn">Next</button>
-            </div>
-        </div>
-    </div>     
-    {% block body %}
-    {% endblock %}
+    <div class="user-info">
+        <form action="{% url 'users:logout' %}" method="post" style="margin: 0; margin-left: 20px;">
+            {% csrf_token %}
+            <button type="submit">Log out</button>
+        </form>
+    </div>
+<div class="app">
+    <h1>Simple Quiz</h1>
+    <div class="quiz">
+    <h2 id="question">Question goes here</h2>
+    <div id="answer-buttons">
+        <button class="btn">Answer 1</button>
+        <button class="btn">Answer 2</button>
+        <button class="btn">Answer 3</button>
+        <button class="btn">Answer 4</button>
+    </div>
+    <button id="next-btn">Next</button>
+    </div>
+</div>
 </body>
 </html>

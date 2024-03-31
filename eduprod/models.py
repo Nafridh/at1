@@ -2,8 +2,7 @@ from django.db import models
 
 class Question(models.Model):
     question_text = models.CharField(max_length=200)
-    answer_text1 = models.TextField()
-    category = models.CharField(max_length=50, default='General')
+    answer_text = models.TextField()
 
     def __str__(self):
         return self.question_text
