@@ -9,30 +9,30 @@ const questions = [
         ]
     },
     {
-        question: "Which of the following is an example of a chemical change?",
+        question: "The atomic number of an element is determined by the number of:",
         answers: [
-            { text: "Melting Ice", correct: false},
-            { text: "Dissolving Sugar in Water", correct: false},
-            { text: "Burning Wood", correct: true},
-            { text: "Cutting Paper", correct: false},
+            { text: "Protons", correct: true},
+            { text: "Electrons", correct: false},
+            { text: "Neutrons", correct: false},
+            { text: "Protons and neutrons", correct: false},
         ]
     },
     {
-        question: "Which of the following is an example of a chemical change?",
+        question: "Which of the following subatomic particles has a positive charge?",
         answers: [
-            { text: "Melting Ice", correct: false},
-            { text: "Dissolving Sugar in Water", correct: false},
-            { text: "Burning Wood", correct: true},
-            { text: "Cutting Paper", correct: false},
+            { text: "Nucleus", correct: false},
+            { text: "Neutron", correct: false},
+            { text: "Electron", correct: false},
+            { text: "Proton", correct: true},
         ]
     },
     {
-        question: "Which of the following is an example of a chemical change?",
+        question: "An isotope of an element has the same number of:",
         answers: [
-            { text: "Melting Ice", correct: false},
-            { text: "Dissolving Sugar in Water", correct: false},
-            { text: "Burning Wood", correct: true},
-            { text: "Cutting Paper", correct: false},
+            { text: "Protons, but a different number of neutrons", correct: false},
+            { text: "Protons, but a different number of electrons", correct: false},
+            { text: "Neutrons, but a different number of protons", correct: true},
+            { text: "Electrons, but a different number of protons", correct: false},
         ]
     }
 ];
