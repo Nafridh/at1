@@ -168,10 +168,11 @@ h2{
 
 .logo {
    display: block;
-   width: 75px; /* Adjust the width as needed */
+   width: 500px; /* Adjust the width as needed */
    height: auto;
    margin: 10px auto; /* Adjust margin values as needed */
    border-radius: 4px;
+   float: left;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -222,7 +223,7 @@ a:hover {
  
  .logo {
    display: block;
-   width: 75px; /* Adjust the width as needed */
+   width: 300px; /* Adjust the width as needed */
    height: auto;
    margin: 10px auto; /* Adjust margin values as needed */
    border-radius: 4px;
