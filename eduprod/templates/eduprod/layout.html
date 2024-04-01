@@ -7,14 +7,18 @@
    <script src="{% static 'eduprod/scripts.js' %}" defer></script>
 </head>
 <body>
-    <div class="user-info">
-        <form action="{% url 'users:logout' %}" method="post" style="margin: 0; margin-left: 20px;">
-            {% csrf_token %}
-            <button type="submit">Log out</button>
-        </form>
-    </div>
+    <div class="header">
+        <img src="{% static 'users/logo.jpeg' %}" alt="Logo" class="logo">
+        <div class="user-info">
+            <span>{{ user.username }}</span>
+            <form action="{% url 'users:logout' %}" method="post" style="margin: 0; margin-left: 20px;">
+                {% csrf_token %}
+                <button type="submit" class="logout-button">Log out</button>
+            </form>
+        </div>
+    </div> 
 <div class="app">
-    <h1>Simple Quiz</h1>
+    <h1>Module One - Revision Quiz</h1>
     <div class="quiz">
     <h2 id="question">Question goes here</h2>
     <div id="answer-buttons">

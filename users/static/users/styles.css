@@ -3,34 +3,34 @@
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
-}
-body{
+  }
+  body{
     background: #001e4d;
-}
-.app{
+  }
+  .app{
     background: #fff;
     width: 90%;
     max-width: 600px;
     margin: 100px auto 0;
     border-radius: 10px;
     padding: 30px;
-}
-.app h1{
+  }
+  .app h1{
     font-size: 25px;
     color: #001e4d;
     font-weight: 600;
     border-bottom: 1px solid #333;
     padding-bottom: 30px;
-}
-.quiz{
+  }
+  .quiz{
     padding: 20px 0;
-}
-.quiz h2{
+  }
+  .quiz h2{
     font-size: 18px;
     color: #001e4d;
     font-weight: 600;
-}
-.btn{
+  }
+  .btn{
     background: #fff;
     color: #222;
     font-weight: 500;
@@ -41,91 +41,173 @@ body{
     text-align: left;
     border-radius: 4px;
     cursor: pointer;
-    transition: 0.3s;
-}
-.btn:hover{
+    transition: all 0.3s;
+  }
+  .btn:hover:not([disabled]){
     background: #222;
     color: #fff;
-}
-#next-btn{
+  }
+  .btn:disabled{
+    cursor: no-drop;
+  }
+  #next-btn{
     background: #001e4d;
     color: #fff;
     font-weight: 500;
     width: 150px;
-    max-width: 600px;
-    margin: 20px auto 0;
-    border: 0px;
+    border: 0;
     padding: 10px;
+    margin: 20px auto 0;
     border-radius: 4px;
     cursor: pointer;
     display: none;
-}
-.button{
-    background: #001e4d;
-    color: #fff;
-    font-weight: 500;
-    width: 150px;
-    max-width: 600px;
-    margin: 20px auto 0;
-    border: 0px;
-    padding: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    display: none;
-}
-
-.question, .answer { 
-    margin: 20px; 
-    font-size: 20px; 
-}
-
-#revealBtn { 
-    margin: 20px; 
-    font-size: 16px; 
-    cursor: pointer; 
-}
-
-.form-row {
+  }
+  .correct{
+    background: #9aeabc;
+  }
+  .incorrect{
+    background: #ff9393;
+  }
+  
+   .watch-link{
+     position: absolute;
+     bottom: 5%;
+     right: 5%;
+     color: #fff;
+     text-decoration: none;
+   }
+ 
+ 
+ .form-row {
     width: 400px;
     display: flex;
     margin-bottom: 10px; /* Space between rows */
-}
-.form-row label {
+ }
+ .form-row label {
     flex-basis: 50%; /* Assigns 50% of the container's width to the label */
     padding-right: 10px; /* Space between the label and the select */
     text-align: right;
-}
-.form-row select {
+ }
+ .form-row select {
     flex-basis: 50%; /* Assigns 50% of the container's width to the select */
-}
-
-p {
+ }
+ 
+ p {
     margin: 20px; 
-}
-
-.header {
+ }
+ 
+ .header {
     display: flex;
-    align-items: center;
+    align-items: left;
     justify-content: space-between;
     padding: 10px;
-}
-.logo img {
+ }
+ .logo img {
     height: auto; /* Keep image aspect ratio */
     width: auto; /* You can set a max-width here if needed */
-}
-.user-info {
+ }
+ .user-info {
     display: flex;
     align-items: center;
-}
-.h1{
+ }
+ .h1{
     font-size: 25px;
     color: #001e4d;
     font-weight: 600;
     border-bottom: 1px solid #333;
     padding-bottom: 30px;
-}
-.h2{
+ }
+ h2{
     font-size: 18px;
     color: #001e4d;
     font-weight: 600;
+ }
+ 
+ .header {
+    background: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+ }
+ 
+ .user-info {
+    display: flex;
+    align-items: center;
+    color: #001e4d;
+ }
+ 
+ .user-info span {
+    margin-right: 10px;
+ }
+ 
+ .user-info form button {
+    background: none;
+    color: #001e4d;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+ }
+ .logout-button {
+    background: #001e4d;
+    color: #fff;
+    font-weight: 500;
+    border: 1px solid #001e4d;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 0.3s;
+    outline: none;
+    background: #fff;
+        
+ }
+ 
+ .logout-button:hover {
+    background: #001e4d;
+    color: #fff;
+ }
+
+ .logo {
+    display: block;
+    width: 75px; /* Adjust the width as needed */
+    height: auto;
+    margin: 10px auto; /* Adjust margin values as needed */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo img {
+    height: 40px; /* Adjust the height as needed */
+    width: auto;
+    margin-right: 10px; /* Add some spacing between the logo and user info */
+}
+a {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #001e4d;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+a:hover {
+    background-color: #0044a0;
+}
+.messages {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.messages li {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.messages li.success {
+    background-color: #c6efce;
+    color: #2e6e4e;
 }
