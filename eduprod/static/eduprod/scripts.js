@@ -20,9 +20,9 @@ const questions = [
     {
         question: "An isotope of an element has the same number of:",
         answers: [
-            { text: "Protons, but a different number of neutrons", correct: false},
+            { text: "Neutrons, but a different number of protons", correct: false},
+            { text: "Protons, but a different number of neutrons", correct: true},
             { text: "Protons, but a different number of electrons", correct: false},
-            { text: "Neutrons, but a different number of protons", correct: true},
             { text: "Electrons, but a different number of protons", correct: false},
         ]
     },
@@ -39,9 +39,9 @@ const questions = [
         question: "Which of the following statements about ions is correct?",
         answers: [
             { text: "Ions have a neutral charge", correct: false},
+            { text: "Ions have gained or lost electrons to achieve a stable configuration", correct: true},
             { text: "Cations have a negative charge", correct: false},
             { text: "Anions have a positive charge", correct: false},
-            { text: "Ions have gained or lost electrons to achieve a stable configuration", correct: true},
         ]
     },
     {
@@ -49,17 +49,17 @@ const questions = [
         answers: [
             { text: "Carbon", correct: false},
             { text: "Oxygen", correct: false},
-            { text: "Sodium", correct: false},
-            { text: "Chlorine", correct: true},
+            { text: "Sodium", correct: true},
+            { text: "Chlorine", correct: false},
         ]
     },
     {
         question: "The mass number of an atom is determined by the number of:",
         answers: [
+            { text: "Protons and neutrons", correct: true},
             { text: "Protons", correct: false},
             { text: "Electrons", correct: false},
             { text: "Neutrons", correct: false},
-            { text: "Protons and neutrons", correct: true},
         ]
     },
     {
@@ -74,19 +74,19 @@ const questions = [
     {
         question: "Which of the following elements belongs to Group 18 of the periodic table?",
         answers: [
-            { text: "Helium (He)", correct: false},
             { text: "Sodium (Na)", correct: false},
             { text: "Oxygen (O)", correct: false},
-            { text: "Carbon (C)", correct: true},
+            { text: "Helium (He)", correct: true},
+            { text: "Carbon (C)", correct: false},
         ]
     },
     {
         question: "Which of the following is the correct electron configuration for nitrogen (N)?",
         answers: [
-            { text: "1s^2 2s^2 2p^3", correct: false},
+            { text: "1s^2 2s^2 2p^3", correct: true},
             { text: "1s^2 2s^2 2p^5", correct: false},
             { text: "1s^2 2s^2 2p^6", correct: false},
-            { text: "1s^2 2s^2 2p^4", correct: true},
+            { text: "1s^2 2s^2 2p^4", correct: false},
         ]
     },
     {
