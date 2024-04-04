@@ -1,3 +1,4 @@
+// Array of question objects
 const questions = [
     {
         question: "Which of the following is an example of a chemical change?",
@@ -99,21 +100,25 @@ const questions = [
         ]
     }
 ];
+// ... (other questions)
 
+// HTML elements
 const questionElement = document.getElementById("question");
 const answerButtons = document.getElementById("answer-buttons");
 const nextButton = document.getElementById("next-btn");
 
+// Variables to track current question index and score
 let currentQuestionIndex = 0;
 let score = 0;
 
+// Function to start the quiz
 function startQuiz(){
     currentQuestionIndex = 0;
     score = 0;
     nextButton.innerHTML = "Next";
     showQuestion();
 }
-
+// Function to display the current question
 function showQuestion(){
     resetState();
     let currentQuestion = questions[currentQuestionIndex];
@@ -132,14 +137,14 @@ function showQuestion(){
     });
 }
 
-
+// Function to reset the state of the quiz (clear answer buttons, etc.)
 function resetState(){
     nextButton.style.display = "none";
     while(answerButtons.firstChild){
         answerButtons.removeChild(answerButtons.firstChild);
     }
 }
-
+// Function to handle the selection of an answer
 function selectAnswer(e){
     const selectedBtn = e.target;
     const isCorrect = selectedBtn.dataset.correct === "true";
@@ -157,14 +162,14 @@ function selectAnswer(e){
     });
     nextButton.style.display = "block";
 }
-
+// Function to display the final score at the end of the quiz
 function showScore(){
     resetState();
     questionElement.innerHTML = `You scored ${score} out of ${questions.length}!`;
     nextButton.innerHTML = "Play Again";
     nextButton.style.display = "block";
 }
-
+// Function to handle the "Next" button click
 function handleNextButton(){
     currentQuestionIndex++;
     if(currentQuestionIndex < questions.length){
@@ -174,7 +179,7 @@ function handleNextButton(){
     }
 }
 
-
+// Event listener for the "Next" button click
 nextButton.addEventListener("click", ()=>{
     if(currentQuestionIndex < questions.length){
         handleNextButton();
@@ -183,5 +188,5 @@ nextButton.addEventListener("click", ()=>{
     }
 });
 
-
+// Start the quiz
 startQuiz();

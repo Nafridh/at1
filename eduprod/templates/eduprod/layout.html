@@ -3,31 +3,31 @@
 <html lang="en">
 <head>
     <title>Chemistry - Revision Quiz</title>
-   <link href="{% static 'eduprod/styles.css' %}" rel="stylesheet">
-   <script src="{% static 'eduprod/scripts.js' %}" defer></script>
+   <link href="{% static 'eduprod/styles.css' %}" rel="stylesheet"> <!-- Include the CSS file -->
+   <script src="{% static 'eduprod/scripts.js' %}" defer></script> <!-- Include the JavaScript file -->
 </head>
 <body>
     <div class="header">
-        <img src="{% static 'users/logo.jpeg' %}" alt="Logo" class="logo">
+        <img src="{% static 'users/logo.jpeg' %}" alt="Logo" class="logo"> <!-- Display the logo image -->
         <div class="user-info">
-            <span>{{ user.username }}</span>
+            <span>{{ user.username }}</span> <!-- Display the username of the logged-in user -->
             <form action="{% url 'users:logout' %}" method="post" style="margin: 0; margin-left: 20px;">
                 {% csrf_token %}
-                <button type="submit" class="logout-button">Log out</button>
+                <button type="submit" class="logout-button">Log out</button> <!-- Logout button -->
             </form>
         </div>
     </div> 
 <div class="app">
-    <h1>Module One - Revision Quiz</h1>
+    <h1>Module One - Revision Quiz</h1> <!-- Heading for the quiz module -->
     <div class="quiz">
-    <h2 id="question">Question goes here</h2>
+    <h2 id="question">Question goes here</h2> <!-- Heading for the quiz question -->
     <div id="answer-buttons">
-        <button class="btn">Answer 1</button>
-        <button class="btn">Answer 2</button>
-        <button class="btn">Answer 3</button>
-        <button class="btn">Answer 4</button>
+        <button class="btn">Answer 1</button> <!-- Button for answer 1 -->
+        <button class="btn">Answer 2</button> <!-- Button for answer 2 -->
+        <button class="btn">Answer 3</button> <!-- Button for answer 3 -->
+        <button class="btn">Answer 4</button> <!-- Button for answer 4 -->
     </div>
-    <button id="next-btn">Next</button>
+    <button id="next-btn">Next</button> <!-- Button to go to the next question -->
     </div>
 </div>
 </body>
